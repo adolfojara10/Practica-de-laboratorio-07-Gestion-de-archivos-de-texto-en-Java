@@ -38,6 +38,7 @@ public class ControladorTexto {
 
         for (int i = 0; i < abe.length(); i++) {
             diccionario.put(abe.charAt(i), abe.charAt(aux));
+            aux--;
         }
 
         diccionario.put(espacio.charAt(0), caritas.charAt(10));
@@ -56,9 +57,9 @@ public class ControladorTexto {
         return diccionario;
     }
 
-    public boolean comprobar(String ruta, String nombre) {
+    /*  public boolean comprobar(String ruta, String nombre) {
         nombre = nombre.concat(".txt");
-        fichero = new File(ruta + File.separator + nombre);
+        fichero = new File("C:\\Users\\Adolfo\\Desktop\\pruebas\\hola.txt");
 
         if (fichero.exists()) {
             return true;
@@ -79,26 +80,32 @@ public class ControladorTexto {
         }
 
         return fichero.getAbsolutePath();
-    }
-
-    public void encriptar(String rutaAbsoluta, String texto) {
+    }*/
+    public void encriptar(/*String rutaAbsoluta,*/String texto) {
         //fichero = new File(rutaAbsoluta);
-        texto = texto.toLowerCase();
-        String aux = null;
+        //texto = texto.toLowerCase();
+        String aux = "";
 
         for (int i = 0; i < texto.length(); i++) {
             char letra = texto.charAt(i);
-
+            String le = String.valueOf(letra);
             for (Map.Entry<Character, Character> letra2 : diccionario.entrySet()) {
+                String le2 = String.valueOf(letra2.getKey());
 
-                if (letra == letra2.getKey()) {
-                    aux = letra2.getValue().toString();
+                if (le.equalsIgnoreCase(le2)) {
+                    if (Character.isUpperCase(letra)) {
+                        aux = aux.concat(String.valueOf(letra2.getValue()).toUpperCase());
+                        System.out.println(aux);
+                    } else {
+                        aux = aux.concat(String.valueOf(letra2.getValue()));
+                        System.out.println(aux);
+                    }
                 }
             }
         }
 
         try {
-            FileWriter archivoEscritura = new FileWriter(rutaAbsoluta, true);
+            FileWriter archivoEscritura = new FileWriter("C:\\Users\\Adolfo\\Desktop\\pruebas\\hola.txt", false);
 
             BufferedWriter escritura = new BufferedWriter(archivoEscritura);
 
