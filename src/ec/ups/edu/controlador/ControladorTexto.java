@@ -57,9 +57,19 @@ public class ControladorTexto {
         return diccionario;
     }
 
-    /*  public boolean comprobar(String ruta, String nombre) {
+    public boolean comprobarRuta(String ruta) {
+        fichero = new File(ruta);
+        
+        if(fichero.exists()){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean comprobar(String ruta, String nombre) {
         nombre = nombre.concat(".txt");
-        fichero = new File("C:\\Users\\Adolfo\\Desktop\\pruebas\\hola.txt");
+        fichero = new File(ruta + File.separator + nombre);
 
         if (fichero.exists()) {
             return true;
@@ -80,8 +90,9 @@ public class ControladorTexto {
         }
 
         return fichero.getAbsolutePath();
-    }*/
-    public void encriptar(/*String rutaAbsoluta,*/String texto) {
+    }
+    
+    public void encriptar(String rutaAbsoluta, String texto) {
         //fichero = new File(rutaAbsoluta);
         //texto = texto.toLowerCase();
         String aux = "";
@@ -105,7 +116,7 @@ public class ControladorTexto {
         }
 
         try {
-            FileWriter archivoEscritura = new FileWriter("C:\\Users\\Adolfo\\Desktop\\pruebas\\hola.txt", false);
+            FileWriter archivoEscritura = new FileWriter(rutaAbsoluta, false);
 
             BufferedWriter escritura = new BufferedWriter(archivoEscritura);
 
