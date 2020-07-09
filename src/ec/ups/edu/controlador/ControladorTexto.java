@@ -35,8 +35,9 @@ public class ControladorTexto {
 
     /**
      * Metodo constructor que controlador texto hace la instancia de el
-     * abecedario, diccionario y otro para crear un dicionario.
-     * este metodo  especial de la clase  es invocada siempre que se crea un objeto de esta clase
+     * abecedario, diccionario y otro para crear un dicionario. este metodo
+     * especial de la clase es invocada siempre que se crea un objeto de esta
+     * clase
      */
     public ControladorTexto() {
         abecedario = new ArrayList<>();
@@ -50,9 +51,8 @@ public class ControladorTexto {
      * que el metodo put almacena el valor especificado y lo asocia ala clave
      * especificada en este mapa
      *
-     * @return diccionario
+     * @return diccionario 
      */
-
     public Map<Character, Character> crearDiccionario() {
         //Declaracion de nuevas varibles
         String abe = "abcdefghijklmnñopqrstuvwxyz";
@@ -152,6 +152,18 @@ public class ControladorTexto {
         return fichero.getAbsolutePath();
     }
 
+    /**
+     * El metodo encripar tieneuna variable vacia auxiliar que nos ayudara para
+     * que los con cindiciales planteados podamos asignar a nuevos datos de tipo
+     * String y en si este metodo hace la encriptacion del codigo y con la ayuda
+     * de la clase File que se estan usando los mtodos para leer y esribir
+     * archivos
+     *
+     * @param rutaAbsoluta Dato de tipo String
+     * @param texto Dato de tipo String
+     * @throws Error de archivos no encontrados, error general y el error de
+     * escritura
+     */
     public void encriptar(String rutaAbsoluta, String texto) {
         //fichero = new File(rutaAbsoluta);
         //texto = texto.toLowerCase();
@@ -164,6 +176,7 @@ public class ControladorTexto {
                 String le2 = String.valueOf(letra2.getKey());
 
                 if (le.equalsIgnoreCase(le2)) {
+                    // si la varibale le asignida el dato de tipo String letra es mayuscula nos devolvera un true
                     if (Character.isUpperCase(letra)) {
                         aux = aux.concat(String.valueOf(letra2.getValue()).toUpperCase());
                         System.out.println(aux);
@@ -176,7 +189,18 @@ public class ControladorTexto {
         }
 
         try {
+
+            /**
+             * Incializacion del objeto archIvoEscritura con el FileWritter que
+             * nos permite escribir archivos
+             *
+             */
             FileWriter archivoEscritura = new FileWriter(rutaAbsoluta, false);
+            /**
+             * Incializacion del objeto escritura con el BufferedWriter que es
+             * como un lector temporados que hace que podamos leer de linea en
+             * linea
+             */
 
             BufferedWriter escritura = new BufferedWriter(archivoEscritura);
 
