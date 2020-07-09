@@ -13,9 +13,9 @@ import java.io.IOException;
 import java.util.*;
 
 /**
- * Esta clase contiene o almacena las fucnciones necesarias para que el usu de
- * este programa sea eficaz asi como los metodos para cintrolar textos, crear
- * diccionarios, comprobar rutas, conprobar y el metodo emcriptar.
+ * Esta clase contiene o almacena las fucnciones necesarias para  el usu de
+ * este programa sea eficaz asi como los metodos para controlar textos, crear
+ * diccionarios, comprobar rutas, conprobar y el metodo encriptar.
  *
  * @author Adolfo
  * @version 11.3
@@ -57,7 +57,7 @@ public class ControladorTexto {
         //Declaracion de nuevas varibles
         String abe = "abcdefghijklmnñopqrstuvwxyz";
         String num = "0123456789";
-        String caritas = "☺☻♥♦♣♠•◘○◙♀";
+        String caritas = "☺☻♥♦♣♠•◘○◙♀"; 
         String espacio = " ";
         int aux = (abe.length() - 1);
 
