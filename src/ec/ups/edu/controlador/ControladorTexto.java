@@ -13,52 +13,54 @@ import java.io.IOException;
 import java.util.*;
 
 /**
- *Esta clase  contiene o almacena las fucnciones necesarias  para
- *que el usu de este programa sea eficaz asi como los metodos para 
- *cintrolar textos, crear diccionarios, comprobar rutas, conprobar 
- * y el metodo emcriptar.
+ * Esta clase contiene o almacena las fucnciones necesarias para que el usu de
+ * este programa sea eficaz asi como los metodos para cintrolar textos, crear
+ * diccionarios, comprobar rutas, conprobar y el metodo emcriptar.
+ *
  * @author Adolfo
  * @version 11.3
- * @author  JHON FAREZ
+ * @author JHON FAREZ
  * @version 8.2
  */
 public class ControladorTexto {
 
     /**
-     * Declaracion de atributos que seran usados en los metodos
-     * Atributos de diferentes datos;
+     * Declaracion de atributos que seran usados en los metodos Atributos de
+     * diferentes datos;
      */
     private String ruta;
     private File fichero;
     private List<Character> abecedario;
     private Map<Character, Character> diccionario;
- 
+
     /**
-     *Metodo  constructor que controlador texto hace la instancia de el abecedario,
-     * diccionario y otro  para crear un dicionario.
-     * @param
+     * Metodo constructor que controlador texto hace la instancia de el
+     * abecedario, diccionario y otro para crear un dicionario.
+     * este metodo  especial de la clase  es invocada siempre que se crea un objeto de esta clase
      */
     public ControladorTexto() {
         abecedario = new ArrayList<>();
         diccionario = new HashMap<>();
         diccionario = crearDiccionario();
     }
+
     /**
-     * El  metodo crear diccionarios no reisive ningun tipo de parametro por ello 
-     * declaramos  nuevas variables de tipo String eh int, dentro de bucles 
-     * hace que el metodo put almacena el  valor especificado y lo asocia ala 
-     * clave especificada en este  mapa
+     * El metodo crear diccionarios no reisive ningun tipo de parametro por ello
+     * declaramos nuevas variables de tipo String eh int, dentro de bucles hace
+     * que el metodo put almacena el valor especificado y lo asocia ala clave
+     * especificada en este mapa
+     *
      * @return diccionario
      */
 
     public Map<Character, Character> crearDiccionario() {
-      //Declaracion de nuevas varibles
+        //Declaracion de nuevas varibles
         String abe = "abcdefghijklmnñopqrstuvwxyz";
         String num = "0123456789";
         String caritas = "☺☻♥♦♣♠•◘○◙♀";
         String espacio = " ";
         int aux = (abe.length() - 1);
-  
+
         for (int i = 0; i < abe.length(); i++) {
             diccionario.put(abe.charAt(i), abe.charAt(aux));
             aux--;
@@ -66,7 +68,7 @@ public class ControladorTexto {
 
         diccionario.put(espacio.charAt(0), caritas.charAt(10));
         /**
-         * Almacenamiento de el valor  en la posision especifiacada y la 
+         * Almacenamiento de el valor en la posision especifiacada y la
          * asosiacion con la clave especificada en el map
          */
         diccionario.put(num.charAt(0), caritas.charAt(0));
@@ -84,31 +86,35 @@ public class ControladorTexto {
     }
 
     /**
-     * Este metodo resibe como parametro un dato de tipo String ruta, y comprueba 
-     * que la ruta ingresada sea correcta y exista en el comutador huesped
-     * @param  ruta de tipo String ara que compruebe la existencia de la ruta 
-     * @return Boolean si la ruta existe nos retornara un true y caso contrario 
+     * Este metodo resibe como parametro un dato de tipo String ruta, y
+     * comprueba que la ruta ingresada sea correcta y exista en el comutador
+     * huesped
+     *
+     * @param ruta de tipo String ara que compruebe la existencia de la ruta
+     * @return Boolean si la ruta existe nos retornara un true y caso contrario
      * false
      */
-    
-    
     public boolean comprobarRuta(String ruta) {
         fichero = new File(ruta);
-        
-        if(fichero.exists()){
+
+        if (fichero.exists()) {
             return true;
         } else {
             return false;
         }
     }
-/**
- * El metodo concatena el nombre con el "txt", y comprueba que el fichero 
- * despues de instanciarla exista en la ruta y el separator representa el separador 
- * de directorios dependiendo el sistema operativo en el que estemos trabajando 
- * @param ruta Es de tipo String y hace que compruebe si el fichero instanceado.
- * @param nombre de tipo String y con esos datos podemos darle un formato 
- * @return Boolean  true o false si el  fichero existe dentro del la ruta 
- */
+
+    /**
+     * El metodo concatena el nombre con el "txt", y comprueba que el fichero
+     * despues de instanciarla exista en la ruta y el separator representa el
+     * separador de directorios dependiendo el sistema operativo en el que
+     * estemos trabajando
+     *
+     * @param ruta Es de tipo String y hace que compruebe si el fichero
+     * instanceado.
+     * @param nombre de tipo String y con esos datos podemos darle un formato
+     * @return Boolean true o false si el fichero existe dentro del la ruta
+     */
     public boolean comprobar(String ruta, String nombre) {
         nombre = nombre.concat(".txt");
         fichero = new File(ruta + File.separator + nombre);
@@ -119,15 +125,19 @@ public class ControladorTexto {
             return false;
         }
     }
-/**
- * El metodo crear fichero, estamos creando ficheros gracias al metodo createNewFile
- * y ademas de eso el metodo crearFichero controla las exepciones lanzando y 
- * capturando con el try and catch
- * @param ruta En este parametro de entrada nos da de tipo String una direccion 
- * para poder crear un nuevo dichero
- * @param nombre el nombre que se va asignar al nuevo fuchero ingresado para desepues ser manipulado
- * @return Retorna un tipo de dato String que es la ruta absoluta de un arhivo o directorio
- */
+
+    /**
+     * El metodo crear fichero, estamos creando ficheros gracias al metodo
+     * createNewFile y ademas de eso el metodo crearFichero controla las
+     * exepciones lanzando y capturando con el try and catch
+     *
+     * @param ruta En este parametro de entrada nos da de tipo String una
+     * direccion para poder crear un nuevo dichero
+     * @param nombre el nombre que se va asignar al nuevo fuchero ingresado para
+     * desepues ser manipulado
+     * @return Retorna un tipo de dato String que es la ruta absoluta de un
+     * arhivo o directorio
+     */
     public String crearFichero(String ruta, String nombre) {
 
         nombre = nombre.concat(".txt");
@@ -141,7 +151,7 @@ public class ControladorTexto {
 
         return fichero.getAbsolutePath();
     }
-    
+
     public void encriptar(String rutaAbsoluta, String texto) {
         //fichero = new File(rutaAbsoluta);
         //texto = texto.toLowerCase();
