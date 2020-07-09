@@ -105,9 +105,9 @@ public class ControladorTexto {
  * El metodo concatena el nombre con el "txt", y comprueba que el fichero 
  * despues de instanciarla exista en la ruta y el separator representa el separador 
  * de directorios dependiendo el sistema operativo en el que estemos trabajando 
- * @param ruta Es de tipo String y hace que 
+ * @param ruta Es de tipo String y hace que compruebe si el fichero instanceado.
  * @param nombre de tipo String y con esos datos podemos darle un formato 
- * @return 
+ * @return Boolean  true o false si el  fichero existe dentro del la ruta 
  */
     public boolean comprobar(String ruta, String nombre) {
         nombre = nombre.concat(".txt");
@@ -119,7 +119,15 @@ public class ControladorTexto {
             return false;
         }
     }
-
+/**
+ * El metodo crear fichero, estamos creando ficheros gracias al metodo createNewFile
+ * y ademas de eso el metodo crearFichero controla las exepciones lanzando y 
+ * capturando con el try and catch
+ * @param ruta En este parametro de entrada nos da de tipo String una direccion 
+ * para poder crear un nuevo dichero
+ * @param nombre el nombre que se va asignar al nuevo fuchero ingresado para desepues ser manipulado
+ * @return Retorna un tipo de dato String que es la ruta absoluta de un arhivo o directorio
+ */
     public String crearFichero(String ruta, String nombre) {
 
         nombre = nombre.concat(".txt");
