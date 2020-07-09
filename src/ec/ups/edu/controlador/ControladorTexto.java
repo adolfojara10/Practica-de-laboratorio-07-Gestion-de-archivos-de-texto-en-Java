@@ -13,8 +13,14 @@ import java.io.IOException;
 import java.util.*;
 
 /**
- *
+ *Esta clase  contiene o almacena las fucnciones necesarias  para
+ * que el usu de este programa sea eficaz asi como los metodos para 
+ *cintrolar textos, crear diccionarios, comprobar rutas, conprobar 
+ * y el metodo emcriptar.
  * @author Adolfo
+ * @version 11.3
+ * @author  JHON FAREZ
+ * @version 8.2
  */
 public class ControladorTexto {
 
