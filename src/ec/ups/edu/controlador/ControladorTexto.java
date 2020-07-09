@@ -13,9 +13,11 @@ import java.io.IOException;
 import java.util.*;
 
 /**
- * Esta clase contiene o almacena las fucnciones necesarias para  el usu de
- * este programa sea eficaz asi como los metodos para controlar textos, crear
- * diccionarios, comprobar rutas, conprobar y el metodo encriptar.
+ * Esta clase contiene o almacena las funciones necesarias para  el usu de
+ * este programa sea eficaz, asi como los metodos para controlar textos, crear
+ * diccionarios, comprobar rutas, conprobar y el metodo encriptar, que son nesesario para que depues el
+ * usuario pueda manipular el programa con siertas restricciones que le ayudaran aque pueda 
+ * manipular el mismo de una manera correcta y que sea de su total satisfacccion
  *
  * @author Adolfo
  * @version 11.3
@@ -34,7 +36,7 @@ public class ControladorTexto {
     private Map<Character, Character> diccionario;
 
     /**
-     * Metodo constructor que controlador texto hace la instancia de el
+     * Metodo constructor  controladorTexto hace la instancia de el
      * abecedario, diccionario y otro para crear un dicionario. este metodo
      * especial de la clase es invocada siempre que se crea un objeto de esta
      * clase
@@ -46,7 +48,7 @@ public class ControladorTexto {
     }
 
     /**
-     * El metodo crear diccionarios no reisive ningun tipo de parametro por ello
+     * El metodo crear diccionarios no resive ningun tipo de parametro por ello
      * declaramos nuevas variables de tipo String eh int, dentro de bucles hace
      * que el metodo put almacena el valor especificado y lo asocia ala clave
      * especificada en este mapa
@@ -105,7 +107,7 @@ public class ControladorTexto {
     }
 
     /**
-     * El metodo concatena el nombre con el "txt", y comprueba que el fichero
+     * El metodo concatena el nombre con el "txt", o "TXT" y comprueba que el fichero
      * despues de instanciarla exista en la ruta y el separator representa el
      * separador de directorios dependiendo el sistema operativo en el que
      * estemos trabajando

@@ -12,9 +12,15 @@ import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
- *Esta clase se encargara de GUI(laLa interfaz grafica con el usuario) de manera que 
- * el usuario tendra opciones apra poder tomarles e ingresar a la misma para ello la caracteristicas principal esque 
- * la clase es dinamica ya que funcionarar con caulquier ruta ingresada por el usuario
+ *Esta clase se encargara de GUI(La interfaz grafica con el usuario) de manera que 
+ * el usuario tendra opciones para poder  ingresar, para ello la caracteristicas principal esque 
+ * la clase es dinamica ya que funcionara con caulquier ruta ingresada por el usuario,
+ *  ademas esta clase esta con siertas restricciones que el usuario deberea seguir para que la ejecicion
+ * del programa sea eficaz y satisfactorio para el mismo, ya puede resolver dudas 
+ * que el usuario tenga en un momento de que el programa no funcione como el piensa habra 
+ * mensajes emergentes que sera notificados con el JOPtionPane para que el usuario pueda ver que esta 
+ * fallando y pueda corregirlo para poder avanzar con el ejecucion del programa
+ * 
  * @author Adolfo
  * @version 11.3
  * @author JHON FAREZ
@@ -257,8 +263,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
     }
 /**
- * El metodo vaaio  limpiar eta  limpiedno el JTextArea para que el usuario  cada ves que oprima el boton limpiar este 
- * JText quede limpio sin ningun tipo de informacion de tipo texto o String 
+ * El metodo vasio  limpiar esta  limpiando el JTextArea para que el usuario  cada ves que oprima el boton limpiar este 
+ * JText queda limpio sin ningun tipo de informacion de tipo texto o String 
  */
     public void limpiar() {
         txtAreaTexto.setText("");
