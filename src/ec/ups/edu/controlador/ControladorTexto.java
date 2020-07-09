@@ -66,7 +66,7 @@ public class ControladorTexto {
 
         diccionario.put(espacio.charAt(0), caritas.charAt(10));
         /**
-         * Almacenamiento de el valor  en pa posision especifiacada y la 
+         * Almacenamiento de el valor  en la posision especifiacada y la 
          * asosiacion con la clave especificada en el map
          */
         diccionario.put(num.charAt(0), caritas.charAt(0));
@@ -83,6 +83,15 @@ public class ControladorTexto {
         return diccionario;
     }
 
+    /**
+     * Este metodo resibe como parametro un dato de tipo String ruta, y comprueba 
+     * que la ruta ingresada sea correcta y exista en el comutador huesped
+     * @param  ruta de tipo String ara que compruebe la existencia de la ruta 
+     * @return Boolean si la ruta existe nos retornara un true y caso contrario 
+     * false
+     */
+    
+    
     public boolean comprobarRuta(String ruta) {
         fichero = new File(ruta);
         
@@ -92,7 +101,14 @@ public class ControladorTexto {
             return false;
         }
     }
-
+/**
+ * El metodo concatena el nombre con el "txt", y comprueba que el fichero 
+ * despues de instanciarla exista en la ruta y el separator representa el separador 
+ * de directorios dependiendo el sistema operativo en el que estemos trabajando 
+ * @param ruta Es de tipo String y hace que 
+ * @param nombre de tipo String y con esos datos podemos darle un formato 
+ * @return 
+ */
     public boolean comprobar(String ruta, String nombre) {
         nombre = nombre.concat(".txt");
         fichero = new File(ruta + File.separator + nombre);
