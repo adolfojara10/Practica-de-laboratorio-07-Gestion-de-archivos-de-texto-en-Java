@@ -14,7 +14,7 @@ import java.util.*;
 
 /**
  *Esta clase  contiene o almacena las fucnciones necesarias  para
- * que el usu de este programa sea eficaz asi como los metodos para 
+ *que el usu de este programa sea eficaz asi como los metodos para 
  *cintrolar textos, crear diccionarios, comprobar rutas, conprobar 
  * y el metodo emcriptar.
  * @author Adolfo
@@ -24,31 +24,51 @@ import java.util.*;
  */
 public class ControladorTexto {
 
+    /**
+     * Declaracion de atributos que seran usados en los metodos
+     * Atributos de diferentes datos;
+     */
     private String ruta;
     private File fichero;
     private List<Character> abecedario;
     private Map<Character, Character> diccionario;
-
+ 
+    /**
+     *Metodo  constructor que controlador texto hace la instancia de el abecedario,
+     * diccionario y otro  para crear un dicionario.
+     * @param
+     */
     public ControladorTexto() {
         abecedario = new ArrayList<>();
         diccionario = new HashMap<>();
         diccionario = crearDiccionario();
     }
+    /**
+     * El  metodo crear diccionarios no reisive ningun tipo de parametro por ello 
+     * declaramos  nuevas variables de tipo String eh int, dentro de bucles 
+     * hace que el metodo put almacena el  valor especificado y lo asocia ala 
+     * clave especificada en este  mapa
+     * @return diccionario
+     */
 
     public Map<Character, Character> crearDiccionario() {
+      //Declaracion de nuevas varibles
         String abe = "abcdefghijklmnñopqrstuvwxyz";
         String num = "0123456789";
         String caritas = "☺☻♥♦♣♠•◘○◙♀";
         String espacio = " ";
         int aux = (abe.length() - 1);
-
+  
         for (int i = 0; i < abe.length(); i++) {
             diccionario.put(abe.charAt(i), abe.charAt(aux));
             aux--;
         }
 
         diccionario.put(espacio.charAt(0), caritas.charAt(10));
-
+        /**
+         * Almacenamiento de el valor  en pa posision especifiacada y la 
+         * asosiacion con la clave especificada en el map
+         */
         diccionario.put(num.charAt(0), caritas.charAt(0));
         diccionario.put(num.charAt(1), caritas.charAt(1));
         diccionario.put(num.charAt(2), caritas.charAt(2));
