@@ -13,11 +13,12 @@ import java.io.IOException;
 import java.util.*;
 
 /**
- * Esta clase contiene o almacena las funciones necesarias para  el usu de
- * este programa sea eficaz, asi como los metodos para controlar textos, crear
- * diccionarios, comprobar rutas, conprobar y el metodo encriptar, que son nesesario para que depues el
- * usuario pueda manipular el programa con siertas restricciones que le ayudaran aque pueda 
- * manipular el mismo de una manera correcta y que sea de su total satisfacccion
+ * Esta clase contiene o almacena las funciones necesarias para el usu de este
+ * programa sea eficaz, asi como los metodos para controlar textos, crear
+ * diccionarios, comprobar rutas, conprobar y el metodo encriptar, que son
+ * nesesario para que depues el usuario pueda manipular el programa con siertas
+ * restricciones que le ayudaran aque pueda manipular el mismo de una manera
+ * correcta y que sea de su total satisfacccion
  *
  * @author Adolfo
  * @version 11.3
@@ -36,10 +37,9 @@ public class ControladorTexto {
     private Map<Character, Character> diccionario;
 
     /**
-     * Metodo constructor  controladorTexto hace la instancia de el
-     * abecedario, diccionario y otro para crear un dicionario. este metodo
-     * especial de la clase es invocada siempre que se crea un objeto de esta
-     * clase
+     * Metodo constructor controladorTexto hace la instancia de el abecedario,
+     * diccionario y otro para crear un dicionario. este metodo especial de la
+     * clase es invocada siempre que se crea un objeto de esta clase
      */
     public ControladorTexto() {
         abecedario = new ArrayList<>();
@@ -53,13 +53,13 @@ public class ControladorTexto {
      * que el metodo put almacena el valor especificado y lo asocia ala clave
      * especificada en este mapa
      *
-     * @return diccionario 
+     * @return diccionario
      */
     public Map<Character, Character> crearDiccionario() {
         //Declaracion de nuevas varibles
         String abe = "abcdefghijklmnñopqrstuvwxyz";
         String num = "0123456789";
-        String caritas = "☺☻♥♦♣♠•◘○◙♀"; 
+        String caritas = "☺☻♥♦♣♠•◘○◙♀";
         String espacio = " ";
         int aux = (abe.length() - 1);
 
@@ -107,10 +107,10 @@ public class ControladorTexto {
     }
 
     /**
-     * El metodo concatena el nombre con el "txt", o "TXT" y comprueba que el fichero
-     * despues de instanciarla exista en la ruta y el separator representa el
-     * separador de directorios dependiendo el sistema operativo en el que
-     * estemos trabajando
+     * El metodo concatena el nombre con el "txt", o "TXT" y comprueba que el
+     * fichero despues de instanciarla exista en la ruta y el separator
+     * representa el separador de directorios dependiendo el sistema operativo
+     * en el que estemos trabajando
      *
      * @param ruta Es de tipo String y hace que compruebe si el fichero
      * instanceado.

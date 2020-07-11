@@ -12,15 +12,17 @@ import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
- *Esta clase se encargara de GUI(La interfaz grafica con el usuario) de manera que 
- * el usuario tendra opciones para poder  ingresar, para ello la caracteristicas principal esque 
- * la clase es dinamica ya que funcionara con caulquier ruta ingresada por el usuario,
- *  ademas esta clase esta con siertas restricciones que el usuario deberea seguir para que la ejecicion
- * del programa sea eficaz y satisfactorio para el mismo, ya puede resolver dudas 
- * que el usuario tenga en un momento de que el programa no funcione como el piensa habra 
- * mensajes emergentes que sera notificados con el JOPtionPane para que el usuario pueda ver que esta 
- * fallando y pueda corregirlo para poder avanzar con el ejecucion del programa
- * 
+ * Esta clase se encargara de GUI(La interfaz grafica con el usuario) de manera
+ * que el usuario tendra opciones para poder ingresar, para ello la
+ * caracteristicas principal esque la clase es dinamica ya que funcionara con
+ * caulquier ruta ingresada por el usuario, ademas esta clase esta con siertas
+ * restricciones que el usuario deberea seguir para que la ejecicion del
+ * programa sea eficaz y satisfactorio para el mismo, ya puede resolver dudas
+ * que el usuario tenga en un momento de que el programa no funcione como el
+ * piensa habra mensajes emergentes que sera notificados con el JOPtionPane para
+ * que el usuario pueda ver que esta fallando y pueda corregirlo para poder
+ * avanzar con el ejecucion del programa
+ *
  * @author Adolfo
  * @version 11.3
  * @author JHON FAREZ
@@ -35,11 +37,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private ControladorTexto controladorTexto;
 
     /**
-     * Creates new form VentanaPrincipal
-     * Medodo  constructos de la ventana  principal donde contiene el initComponents que  es
-     * El initComponents() no lo puedes modificar asi no mas, en el metodo
-     * donde el ide lleva el control de lo que hace, si lo alteras posiblente ya no pueda cargarse la interfaz.
-     * Asi como tambien estamos  instanciando la clase controladorTexto
+     * Creates new form VentanaPrincipal Medodo constructos de la ventana
+     * principal donde contiene el initComponents que es El initComponents() no
+     * lo puedes modificar asi no mas, en el metodo donde el ide lleva el
+     * control de lo que hace, si lo alteras posiblente ya no pueda cargarse la
+     * interfaz. Asi como tambien estamos instanciando la clase controladorTexto
      */
     public VentanaPrincipal() {
         initComponents();
@@ -48,9 +50,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     /**
-     *Este método se llama desde el constructor para inicializar el formulario.
-     * ADVERTENCIA: NO modifique este código. El contenido de este método es siempre
-      *regenerado por el editor de formularios
+     * Este método se llama desde el constructor para inicializar el formulario.
+     * ADVERTENCIA: NO modifique este código. El contenido de este método es
+     * siempre regenerado por el editor de formularios
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -74,6 +76,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         setTitle("Crear Archivo Encriptado");
 
         jLabel1.setText("Ruta");
+
+        txtRuta.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtRutaKeyTyped(evt);
+            }
+        });
 
         btnBuscar.setBackground(new java.awt.Color(153, 153, 255));
         btnBuscar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -148,35 +156,39 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 /**
- * El metodo btnLimpiarActionPerformed fue generado automaticamente desde el disenio por 
- * asi que de esta manera no se podra modificar el tipo de metodo y los parametros  que resive el mismo 
- * 
- * @param evt 
- */
+     * El metodo btnLimpiarActionPerformed fue generado automaticamente desde el
+     * disenio por asi que de esta manera no se podra modificar el tipo de
+     * metodo y los parametros que resive el mismo
+     *
+     * @param evt
+     */
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
         // TODO add your handling code here:
-/**
- * Dentro del metodo btnLimpiarActionPerformed estamos llamando a otro matodo llamado limpiar que hara que el JTextArea que limpio 
- * sin ningun tipo de texto dentro
- */
+        /**
+         * Dentro del metodo btnLimpiarActionPerformed estamos llamando a otro
+         * matodo llamado limpiar que hara que el JTextArea que limpio sin
+         * ningun tipo de texto dentro
+         */
         limpiar();
 
     }//GEN-LAST:event_btnLimpiarActionPerformed
-/**
- * El metodo btnBuscarActionPerformed se encarga de buscar d la rutaa ingresada en el computador huesped para poder 
- * explorar dedentro de si  segun los datos ingresados
- * @param evt 
- */
+    /**
+     * El metodo btnBuscarActionPerformed se encarga de buscar d la rutaa
+     * ingresada en el computador huesped para poder explorar dedentro de si
+     * segun los datos ingresados
+     *
+     * @param evt
+     */
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
 
         JFileChooser menu = new JFileChooser();
-        
-        FileNameExtensionFilter filtro = new FileNameExtensionFilter("*.TXT", "txt" );
-        
+
+        FileNameExtensionFilter filtro = new FileNameExtensionFilter("*.TXT", "txt");
+
         menu.setFileFilter(filtro);
-        
+
         menu.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
-        
+
         int seleccionar = menu.showOpenDialog(this);
 
         if (seleccionar == JFileChooser.APPROVE_OPTION) {
@@ -185,17 +197,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             txtRuta.setText(fichero.getAbsolutePath());
 
             btnCrear.setEnabled(true);
-                       
 
         }
 
 
     }//GEN-LAST:event_btnBuscarActionPerformed
-/**
- * El metodo btnCrearActionPerformed nos crea un nuevo archivo  y ase uso de varios metodo de la clase controladorTeto
- * ya instanciada  anteriormente
- * @param evt 
- */
+    /**
+     * El metodo btnCrearActionPerformed nos crea un nuevo archivo y ase uso de
+     * varios metodo de la clase controladorTeto ya instanciada anteriormente
+     *
+     * @param evt
+     */
     private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
         // TODO add your handling code here:
 
@@ -227,6 +239,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btnCrearActionPerformed
+
+    /**
+     * Metodo para activar el boton de crear cuando el usuario escribe una ruta
+     * en el txtRuta
+     *
+     * @param evt
+     */
+    private void txtRutaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRutaKeyTyped
+        // TODO add your handling code here:
+        btnCrear.setEnabled(true);
+    }//GEN-LAST:event_txtRutaKeyTyped
 
     /**
      * @param args los argumentos de la línea de comando
@@ -262,10 +285,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
     }
-/**
- * El metodo vasio  limpiar esta  limpiando el JTextArea para que el usuario  cada ves que oprima el boton limpiar este 
- * JText queda limpio sin ningun tipo de informacion de tipo texto o String 
- */
+
+    /**
+     * El metodo vasio limpiar esta limpiando el JTextArea para que el usuario
+     * cada ves que oprima el boton limpiar este JText queda limpio sin ningun
+     * tipo de informacion de tipo texto o String
+     */
     public void limpiar() {
         txtAreaTexto.setText("");
         txtRuta.setText("");
