@@ -175,7 +175,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     /**
      * El metodo btnBuscarActionPerformed se encarga de buscar d la rutaa
      * ingresada en el computador huesped para poder explorar dedentro de si
-     * segun los datos ingresados
+     * segun los datos ingresados. El JFileChooser es usado en esta clase para
+     * que el usuario pueda escoger la carpeta o el archivo
+     *
      *
      * @param evt
      */
